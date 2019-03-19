@@ -12,7 +12,11 @@ import "../node_modules/prismjs/themes/prism.css"
 class App extends Component {
 	state = {
 		sample_data: {},
-		field0: "message"
+		field0: "message",
+		pair_selectors: [
+			{after: "an hour ago"},
+			{message: ""}
+		]
 	}
 	
 	render() {
@@ -28,11 +32,10 @@ class App extends Component {
 			
 			<b.Columns>
 				<b.Column isSize='1/4'>
-					<SelectorPanel></SelectorPanel>
-					asdasdsa
+					<SelectorPanel pairs={this.state.pair_selectors}></SelectorPanel>
 				</b.Column>
 
-				<b.Column isSize="3/4">
+				<b.Column>
 					<MainDisplay sample_data={sample_data.rows} field0={this.state.field0}></MainDisplay>
 				</b.Column>
 

@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 
+
+
 export class Selector extends Component {
   render() {
+
     return (
-      <div>
-        
-      </div>
-    )
-  }
+            <div>
+            {this.props.pair}
+            </div>
+        )
+    }
 }
 
 export default Selector

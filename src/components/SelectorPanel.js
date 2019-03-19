@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 
 import * as b from 'bloomer';
+import Selector from './Selector';
 
 export class SelectorPanel extends Component {
-  render() {
-    return (
-      <div>
-        <b.Panel>
-            <b.PanelHeading>
-                Parameters
-                <b.PanelBlock>
-                    asdasd
-                </b.PanelBlock>
-            </b.PanelHeading>
-        </b.Panel>
-      </div>
-    )
-  }
+  
+  
+	render() {
+		let selectors = []
+		this.props.pairs.forEach((pair) => {
+			selectors.push(<Selector pair={pair}></Selector>)
+		})
+
+
+
+		return (
+			<div>
+				{selectors}
+			</div>
+		)
+	}
 }
 
 export default SelectorPanel

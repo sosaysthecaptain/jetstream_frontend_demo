@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import * as b from 'bloomer';
-import Moment from 'moment';
 
 import LogItem from './LogItem'
 
@@ -40,11 +39,6 @@ export class MainDisplay extends Component {
 	}
 
 	
-}
-
-const card_style = {
-	border: "none",
-	fontSize: "10pt"
 }
 
 export default MainDisplay
