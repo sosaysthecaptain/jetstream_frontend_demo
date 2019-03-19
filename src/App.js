@@ -7,6 +7,7 @@ import MainDisplay from './components/MainDisplay.js'
 
 import sample_data from './sample_data.json';
 import './App.scss';
+import "../node_modules/prismjs/themes/prism.css"
 
 class App extends Component {
 	state = {
@@ -26,7 +27,7 @@ class App extends Component {
 			
 			
 			<b.Columns>
-				<b.Column isSize='1/4' isColor="gray-darker">
+				<b.Column isSize='1/4'>
 					<SelectorPanel></SelectorPanel>
 					asdasdsa
 				</b.Column>
@@ -34,6 +35,7 @@ class App extends Component {
 				<b.Column isSize="3/4">
 					<MainDisplay sample_data={sample_data.rows} field0={this.state.field0}></MainDisplay>
 				</b.Column>
+
 			</b.Columns>
 
 
