@@ -32,7 +32,7 @@ class App extends Component {
 			<div>
 				<b.Hero isColor="primary" isSize="small">
 					<b.HeroBody>
-						<b.Title isSize="4">Jetstream</b.Title>
+						<b.Title isSize="4">Jetstream UI demo</b.Title>
 					</b.HeroBody>
 				</b.Hero>
 			
