@@ -40,18 +40,7 @@ export class LogItem extends Component {
 
 	get_expanded() {
 		const json = JSON.stringify(this.props.log, null, 4)
-		// const json = JSON.stringify(this.props.log)
-		// let json = "var data = 1;"
-
 		return (<pre style={json_style}>{json}</pre>)
-
-		return <textarea style={json_style}>{json.trim()}</textarea>
-		// var html = Prism.highlight(json, Prism.languages.javascript, 'javascript')
-
-	
-		// return ( <b>bold?</b>)
-		// return html
-
 	}
 
 	componentDidMount() {
@@ -63,7 +52,7 @@ const json_style = {
 	
 	backgroundColor: "white",
 	lineHeight: "10pt",
-	margin: "-5px"
+	
 }
 
 const card_style = {

@@ -34,9 +34,6 @@ export class Selector extends Component {
                     <b.Delete onClick={this.props.delete_me} value={this.props.pair.key} className="inline" style={{marginLeft: "10px", marginTop: "12px"}}>
 
                     </b.Delete>
-
-                    {/* {this.props.pair.key}
-                    {this.props.pair.value} */}
                 </b.Container>
             
             </div>

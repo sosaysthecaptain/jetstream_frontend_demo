@@ -36,25 +36,17 @@ class App extends Component {
 					</b.HeroBody>
 				</b.Hero>
 			
-			
-			<b.Columns>
-				<b.Column isSize='1/3'>
-					<SelectorPanel pairs={this.state.pair_selectors} options_list={this.state.options_list} delete_me={this.delete_me} add_another={this.add_another}></SelectorPanel>
-				</b.Column>
+				
+				<b.Columns>
+					<b.Column isSize='1/3'>
+						<SelectorPanel pairs={this.state.pair_selectors} options_list={this.state.options_list} delete_me={this.delete_me} add_another={this.add_another}></SelectorPanel>
+					</b.Column>
 
-				<b.Column>
-					<MainDisplay sample_data={sample_data.rows} field0={this.state.field0}></MainDisplay>
-				</b.Column>
+					<b.Column>
+						<MainDisplay sample_data={sample_data.rows} field0={this.state.field0}></MainDisplay>
+					</b.Column>
 
-			</b.Columns>
-
-
-			{/* // <div>
-			// 	<div style={{width: "300px", backgroundColor: "lightgreen"}}>
-			// 		asdasdsa
-			// 		<SelectorPanel></SelectorPanel>
-			// 	</div> */}
-
+				</b.Columns>
 
 			</div>
 		);
