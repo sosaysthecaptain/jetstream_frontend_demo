@@ -7,23 +7,30 @@ import MainDisplay from './components/MainDisplay.js'
 
 import sample_data from './sample_data.json';
 import './App.scss';
-import "../node_modules/prismjs/themes/prism.css"
 
 class App extends Component {
+	constructor(props) {
+		super(props)
+
+		this.delete_me = this.delete_me.bind(this)
+		this.add_another = this.add_another.bind(this)
+	}
+	
 	state = {
 		sample_data: {},
 		field0: "message",
 		pair_selectors: [
-			{after: "an hour ago"},
-			{message: ""}
-		]
+			{key: "after", value: "an hour ago"},
+			{key: "message", value: ""},
+		],
+		options_list: ["after", "message", "fiber_id", "level", "app_version", "server_call_id", "current_user_id", "environment_name", "current_user_email"]
 	}
 	
 	render() {
 		
 		return (
 			<div>
-				<b.Hero isColor="success" isSize="small">
+				<b.Hero isColor="primary" isSize="small">
 					<b.HeroBody>
 						<b.Title isSize="4">Jetstream</b.Title>
 					</b.HeroBody>
@@ -31,8 +38,8 @@ class App extends Component {
 			
 			
 			<b.Columns>
-				<b.Column isSize='1/4'>
-					<SelectorPanel pairs={this.state.pair_selectors}></SelectorPanel>
+				<b.Column isSize='1/3'>
+					<SelectorPanel pairs={this.state.pair_selectors} options_list={this.state.options_list} delete_me={this.delete_me} add_another={this.add_another}></SelectorPanel>
 				</b.Column>
 
 				<b.Column>
@@ -55,6 +62,25 @@ class App extends Component {
 
 	componentDidMount() {
 		this.setState({sample_data: sample_data})
+	}
+
+	delete_me(e) {
+		debugger
+		
+		let index = 0
+		this.state.pair_selectors.forEach((pair) => {
+			if (pair.key === e.target.value) {
+				this.state.pair_selectors.splice(index, 1 );
+			}
+			index += 1
+		})
+	}
+
+	add_another() {
+		debugger
+		const new_pair = {key: "message", value: ""}
+		const pair_selectors = this.state.pair_selectors.push(new_pair)
+		this.setState({pair_selectors: pair_selectors})
 	}
 }
 

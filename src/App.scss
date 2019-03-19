@@ -15,21 +15,12 @@
 // $body-background-color: "black";
 
 // Trick for rendering \n as <br>
-.display-linebreak {
-  white-space: pre-line;
-}
 
 // body {
 //   padding: 3rem;
 //   font-size: 16px;
 // }
 
-.textarea {
-  width: 100%;
-  min-height: 30rem;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 0.8rem;
-  line-height: 1.2;
-}
+
 
 @import "../node_modules/bulma/bulma.sass";
