@@ -65,21 +65,22 @@ class App extends Component {
 	}
 
 	delete_me(e) {
-		debugger
 		
 		let index = 0
-		this.state.pair_selectors.forEach((pair) => {
+		let pair_selectors = JSON.parse(JSON.stringify(this.state.pair_selectors))
+		pair_selectors.forEach((pair) => {
 			if (pair.key === e.target.value) {
-				this.state.pair_selectors.splice(index, 1 );
+				pair_selectors.splice(index, 1 );
 			}
 			index += 1
 		})
+		this.setState({pair_selectors: pair_selectors})
 	}
 
 	add_another() {
-		debugger
-		const new_pair = {key: "message", value: ""}
-		const pair_selectors = this.state.pair_selectors.push(new_pair)
+		const new_pair = {key: "", value: ""}
+		let pair_selectors = JSON.parse(JSON.stringify(this.state.pair_selectors))
+		pair_selectors.push(new_pair)
 		this.setState({pair_selectors: pair_selectors})
 	}
 }
